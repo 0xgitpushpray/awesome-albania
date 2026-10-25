@@ -1,0 +1,30 @@
+name: Check pull request
+
+on:
+  pull_request:
+    paths:
+      - 'data/**'
+      - 'scripts/**'
+      - 'src/**'
+      - 'README.md'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Validate data and README
+        run: npm run validate
+      - name: Check links of new or changed entries
+        run: |
+          git fetch origin "${{ github.base_ref }}" --depth=1
+          node scripts/check-links.mjs --dry --changed "origin/${{ github.base_ref }}"
+      - run: npx astro build

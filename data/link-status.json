@@ -1,0 +1,350 @@
+{
+  "https://akep.al/": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://arbk.rks-gov.net/": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://arxiv.org/abs/2107.13592": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://ask.rks-gov.net/": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://askdata.rks-gov.net/": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://bonevet.org/": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://commonvoice.mozilla.org/sq": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://data.humdata.org/group/alb": {
+    "checked": "2026-10-25",
+    "code": 202
+  },
+  "https://data.statmt.org/cc-100/": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://data.worldbank.org/country/albania": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://data.worldbank.org/country/kosovo": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://dogana.rks-gov.net/OpenData": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://download.geofabrik.de/europe/albania.html": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://download.geofabrik.de/europe/kosovo.html": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://dumps.wikimedia.org/sqwiki/": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://en.wikipedia.org/wiki/XK_(user_assigned_code)": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://fasttext.cc/docs/en/crawl-vectors.html": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://flossk.org/": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://fonts.google.com/noto/specimen/Noto+Sans+Vithkuqi": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://gdg.community.dev/gdg-prishtina/": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://gdg.community.dev/gdg-tirana/": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://geoportal.asig.gov.al/": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://geoportal.rks-gov.net/": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://github.com/Laravel-Lang/lang/tree/main/locales/sq": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://github.com/arthurdejong/python-stdnum/blob/master/stdnum/al/nipt.py": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://github.com/espeak-ng/espeak-ng": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://github.com/iamkun/dayjs/blob/dev/src/locale/sq.js": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://github.com/openai/whisper": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://github.com/plandes/edusenti": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://github.com/tesseract-ocr/tessdata_best": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://github.com/unicode-org/cldr/blob/main/common/main/sq.xml": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://github.com/vacanza/holidays": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://github.com/willborici/veqilharxhi-transliteration": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://glottolog.org/resource/languoid/id/alba1267": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://hosted.weblate.org/languages/sq/": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://hplt-project.org/datasets/v2.0": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://huggingface.co/FacebookAI/xlm-roberta-base": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://huggingface.co/HPLT/hplt_bert_base_2_0_als-Latn": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://huggingface.co/Helsinki-NLP/opus-mt-en-sq": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://huggingface.co/Helsinki-NLP/opus-mt-sq-en": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://huggingface.co/datasets/Davlan/sib200": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://huggingface.co/datasets/Helsinki-NLP/tatoeba_mt": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://huggingface.co/datasets/HuggingFaceFW/fineweb-2": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://huggingface.co/datasets/Kushtrim/bujku": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://huggingface.co/datasets/facebook/belebele": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://huggingface.co/datasets/openlanguagedata/flores_plus": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://huggingface.co/datasets/strombergnlp/shaj": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://huggingface.co/datasets/unimelb-nlp/wikiann": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://huggingface.co/datasets/uonlp/CulturaX": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://huggingface.co/datasets?language=language:sq": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://huggingface.co/facebook/mms-tts-sqi": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://huggingface.co/facebook/nllb-200-distilled-600M": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://huggingface.co/models?language=sq": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://ickosovo.com/": {
+    "checked": "2026-10-25",
+    "code": 403
+  },
+  "https://ijece.iaescore.com/index.php/IJECE/article/view/28729": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://iso639-3.sil.org/code/sqi": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://kqz-ks.org/": {
+    "checked": "2026-10-25",
+    "code": 403
+  },
+  "https://kqz.gov.al/": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://l10n.gnome.org/languages/sq/": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://lindat.mff.cuni.cz/repository/xmlui/handle/11234/1-5411": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://meta.wikimedia.org/wiki/Wikimedians_of_Albanian_Language_User_Group": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://opencollective.com/openlabs": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://opendata.gov.al/": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://openprocurement.al/": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://opus.nlpl.eu/": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://oscar-project.org/": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://packages.fedoraproject.org/pkgs/hunspell-sq/hunspell-sq/": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://pontoon.mozilla.org/sq/": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://pypi.org/project/albanianlanguage/": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://qkb.gov.al/": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://sfk.flossk.org/": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://spacy.io/usage/models#languages": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://sq.wikipedia.org/": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://sq.wiktionary.org/": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://stikk.org/": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://tatoeba.org/en/sentences/show_all_in/sqi/none": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://translatewiki.net/wiki/Portal:Sq": {
+    "checked": "2026-10-25",
+    "code": 403
+  },
+  "https://translations.documentfoundation.org/languages/sq/": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://universaldependencies.org/treebanks/sq_staf/index.html": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://universaldependencies.org/treebanks/sq_tsa/index.html": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://wiki.openstreetmap.org/wiki/Albania": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://wiki.openstreetmap.org/wiki/Kosovo": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://wortschatz.uni-leipzig.de/en/download/Albanian": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://www.bankofalbania.org/Statistics/": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://www.clarin.si/repository/xmlui/handle/11356/1804": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://www.instat.gov.al/": {
+    "checked": "2026-10-25",
+    "code": 200
+  },
+  "https://www.unicode.org/charts/PDF/U10570.pdf": {
+    "checked": "2026-10-25",
+    "code": 200
+  }
+}

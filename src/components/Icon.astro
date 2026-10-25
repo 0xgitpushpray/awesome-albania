@@ -1,0 +1,28 @@
+---
+// Lucide icons, inlined at build time so they inherit currentColor.
+import { Search, ArrowUpRight, ArrowRight, CornerDownLeft, X, MessageSquarePlus, GitPullRequest, Check } from 'lucide-static';
+
+const icons = {
+  search: Search,
+  'arrow-up-right': ArrowUpRight,
+  'arrow-right': ArrowRight,
+  'corner-down-left': CornerDownLeft,
+  x: X,
+  suggest: MessageSquarePlus,
+  pr: GitPullRequest,
+  check: Check,
+} as const;
+
+interface Props {
+  name: keyof typeof icons;
+  size?: number;
+  class?: string;
+}
+const { name, size = 18, class: cls } = Astro.props;
+const svg = icons[name]
+  .replace(/width="\d+"/, `width="${size}"`)
+  .replace(/height="\d+"/, `height="${size}"`)
+  .replace('<svg', `<svg aria-hidden="true" focusable="false"${cls ? ` class="${cls}"` : ''}`);
+---
+
+<Fragment set:html={svg} />

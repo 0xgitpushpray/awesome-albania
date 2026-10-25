@@ -1,0 +1,272 @@
+---
+import '@fontsource-variable/archivo/wdth.css';
+import '@fontsource/permanent-marker/latin-400.css';
+import '../styles/global.css';
+import Icon from '../components/Icon.astro';
+import { getSite, formatDate, REGION_LABEL, REPO, ISSUE_FORM, DATA_FILE, EDIT_DATA } from '../lib/site';
+
+const { sections, total, lastChecked } = await getSite();
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+const pad = (n: number) => String(n).padStart(3, '0');
+const title = 'Awesome Albania';
+const description = `A curated, link-checked list of ${total} Albanian datasets, NLP tools, open data, communities and developer resources.`;
+const allVia = sections.map((s) => s.name).join(' – ');
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}: Albanian datasets, tools &amp; communities</title>
+    <meta name="description" content={description} />
+    <link rel="icon" href={`${base}favicon.svg`} type="image/svg+xml" />
+    <link rel="canonical" href={new URL(base, Astro.site)} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={new URL(base, Astro.site)} />
+    <meta name="theme-color" content="#0f4c5c" />
+  </head>
+  <body>
+    <a class="skip" href="#routes">Skip to the list</a>
+
+    <header class="windshield">
+      <div class="bar wrap">
+        <a class="wordmark" href={base} aria-label="Awesome Albania, home">
+          <span class="wordmark-a">Awesome</span><span class="wordmark-b">Albania</span>
+        </a>
+        <nav class="bar-nav" aria-label="Project">
+          <a href={ISSUE_FORM}>
+            <Icon name="suggest" size={17} />
+            <span>Suggest a resource</span>
+          </a>
+          <a href={REPO} class="bar-gh" aria-label="Source on GitHub">
+            <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" fill="currentColor"
+              ><path
+                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"
+              ></path></svg
+            >
+            <span>GitHub</span>
+          </a>
+        </nav>
+      </div>
+
+      <div class="wrap intro">
+        <h1 class="lede">
+          Albanian datasets, tools, communities and developer resources. Curated, and every link checked.
+        </h1>
+        <form class="search" role="search" action={base} method="get">
+          <label for="q" class="search-label">
+            <span class="search-ask" lang="sq">Ku po shkon?</span>
+            <span class="search-gloss">Where are you headed? Try “ner”, “osm” or “kosovo”.</span>
+          </label>
+          <div class="search-field">
+            <Icon name="search" size={22} class="search-icon" />
+            <input
+              id="q"
+              name="q"
+              type="search"
+              autocomplete="off"
+              spellcheck="false"
+              placeholder={`Search ${total} resources`}
+            />
+            <kbd class="search-key" aria-hidden="true">/</kbd>
+            <button type="button" class="search-clear" aria-label="Clear search" hidden>
+              <Icon name="x" size={18} />
+            </button>
+          </div>
+        </form>
+      </div>
+    </header>
+
+    <nav class="station" aria-label="Destinations">
+      <ul class="station-row wrap" role="list">
+        <li>
+          <button class="dest" type="button" data-to="" aria-pressed="true">
+            <span class="dest-name">All</span>
+            <span class="dest-sq" lang="sq">Të gjitha</span>
+            <span class="dest-via">Every route, every stop</span>
+            <span class="dest-count">{total}</span>
+          </button>
+        </li>
+        {
+          sections.map((s) => (
+            <li>
+              <button class="dest" type="button" data-to={s.id} aria-pressed="false">
+                <span class="dest-name">{s.name}</span>
+                <span class="dest-sq" lang="sq">{s.sq}</span>
+                <span class="dest-via">{s.groups.map((g: any) => g.via).join(' · ')}</span>
+                <span class="dest-count">{s.count}</span>
+              </button>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <main id="routes" class="routes wrap" tabindex="-1">
+      <div class="board-rail">
+        <div class="board" id="board" data-all-via={allVia} data-total={total}>
+          <p class="board-dest">
+            <Icon name="arrow-right" size={26} class="board-arrow" />
+            <span class="board-text">All destinations</span>
+          </p>
+          <p class="board-via"><span class="board-via-label">via</span> <span class="board-via-text">{allVia}</span></p>
+          <p class="board-count"><b class="board-num">{total}</b> <span class="board-unit">stops</span></p>
+        </div>
+        <div class="filters">
+          <fieldset class="region" aria-label="Region">
+            <legend class="sr-only">Region</legend>
+            {
+              [
+                ['', 'Everywhere'],
+                ['al', 'Albania'],
+                ['xk', 'Kosovo'],
+                ['global', 'Global'],
+              ].map(([v, label]) => (
+                <label class="region-opt">
+                  <input type="radio" name="region" value={v} checked={v === ''} />
+                  <span>{label}</span>
+                </label>
+              ))
+            }
+          </fieldset>
+          <p id="status" class="sr-only" role="status" aria-live="polite"></p>
+          <p class="keys" aria-hidden="true">
+            <kbd>/</kbd> search <kbd>j</kbd><kbd>k</kbd> move <kbd><Icon name="corner-down-left" size={12} /></kbd> open
+          </p>
+        </div>
+      </div>
+
+      {
+        sections.map((s) => (
+          <section class="route" id={s.id} data-cat={s.id} aria-labelledby={`h-${s.id}`}>
+            <header class="route-head">
+              <h2 id={`h-${s.id}`}>
+                <span class="route-name">{s.name}</span>
+                <span class="route-sq" lang="sq">{s.sq}</span>
+              </h2>
+              <p class="route-blurb">{s.blurb}</p>
+            </header>
+            {s.groups.map((g: any) => (
+              <div class="leg" data-via={g.via}>
+                <h3 class="leg-via">
+                  <span>via</span> {g.via}
+                </h3>
+                <ol class="stops" role="list">
+                  {g.items.map((r: any) => (
+                    <li
+                      class:list={['stop', { 'is-archived': r.archived }]}
+                      data-region={r.region}
+                      data-search={r.search}
+                    >
+                      <a class="stop-link" href={r.url} rel="noopener">
+                        <span class="stop-no">{pad(r.stop)}</span>
+                        <span class="stop-body">
+                          <span class="stop-name">{r.name}</span>
+                          <span class="stop-desc">{r.desc}</span>
+                        </span>
+                        <span class="stop-meta">
+                          {r.region !== 'global' && (
+                            <abbr class="plate" title={REGION_LABEL[r.region]}>
+                              {r.region.toUpperCase()}
+                            </abbr>
+                          )}
+                          {r.license && <span class="stop-license">{r.license}</span>}
+                          {r.archived ? (
+                            <span class="stamp stamp-archived">Archived</span>
+                          ) : r.checked && r.checked !== lastChecked ? (
+                            <span class="stamp stamp-stale" title="Not confirmed in the latest link check">
+                              last ok <time datetime={r.checked}>{formatDate(r.checked)}</time>
+                            </span>
+                          ) : (
+                            r.checked && (
+                              <span class="stamp stamp-ok" title={`Link checked ${formatDate(r.checked)}`}>
+                                <Icon name="check" size={13} />
+                                <span class="sr-only">Link checked {formatDate(r.checked)}</span>
+                              </span>
+                            )
+                          )}
+                        </span>
+                        <Icon name="arrow-up-right" size={18} class="stop-go" />
+                      </a>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            ))}
+          </section>
+        ))
+      }
+
+      <div class="nowhere" id="nowhere" hidden>
+        <p class="nowhere-sign"><span lang="sq">Nuk shkon furgoni</span></p>
+        <h2 class="nowhere-title">No van goes there yet.</h2>
+        <p class="nowhere-text">
+          Nothing matches <q class="nowhere-q"></q>. Try a broader word, check the spelling, or switch the region to
+          Everywhere. If you know a resource that belongs here, add it.
+        </p>
+        <p class="nowhere-actions">
+          <button type="button" class="btn btn-ghost" data-reset>Show everything</button>
+          <a class="btn btn-ink nowhere-suggest" href={ISSUE_FORM}>
+            <Icon name="suggest" size={17} /> Suggest a resource
+          </a>
+        </p>
+      </div>
+    </main>
+
+    <section class="depot" aria-labelledby="h-depot">
+      <div class="wrap depot-inner">
+        <div class="depot-board">
+          <h2 id="h-depot" class="depot-title">Add a stop</h2>
+          <p class="depot-sq" lang="sq">Shto një ndalesë</p>
+          <p class="depot-text">
+            The list grows from people who know where things are. If a dataset, tool or community helped you, put it on
+            the route.
+          </p>
+        </div>
+        <ol class="depot-ways" role="list">
+          <li class="way">
+            <h3 class="way-title"><Icon name="suggest" size={20} /> Fill in a form</h3>
+            <p>No git needed. Open a GitHub issue with the name, link and one line on what it is. A maintainer adds it.</p>
+            <a class="btn btn-ink" href={ISSUE_FORM}>Suggest a resource <Icon name="arrow-up-right" size={16} /></a>
+          </li>
+          <li class="way">
+            <h3 class="way-title"><Icon name="pr" size={20} /> Open a pull request</h3>
+            <p>
+              Add an entry to <a href={DATA_FILE}><code>data/resources.yml</code></a>. CI validates it, checks the link and
+              regenerates the README.
+            </p>
+            <a class="btn btn-ghost" href={EDIT_DATA}>Edit the data file <Icon name="arrow-up-right" size={16} /></a>
+          </li>
+        </ol>
+        <p class="depot-note">
+          <Icon name="check" size={16} />
+          <span>
+            Every link is checked weekly by a GitHub Action{lastChecked && <>, most recently on <time datetime={lastChecked}>{formatDate(lastChecked)}</time></>}.
+            Projects that stop being maintained are marked archived, not deleted.
+          </span>
+        </p>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <div class="wrap foot-inner">
+        <p>
+          <a href={REPO}>Awesome Albania</a> is maintained on GitHub. The list is{' '}
+          <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>, so take it anywhere; the code is{' '}
+          <a href={`${REPO}/blob/main/LICENSE`}>MIT</a>.
+        </p>
+        <p class="foot-also">
+          Also readable as a plain <a href={`${REPO}#readme`}>README</a>. Inspired by{' '}
+          <a href="https://github.com/sindresorhus/awesome">awesome</a> lists.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      import '../scripts/app';
+    </script>
+  </body>
+</html>

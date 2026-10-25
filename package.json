@@ -1,0 +1,22 @@
+{
+  "name": "awesome-albania",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A curated list of Albanian datasets, tools, communities and developer resources.",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "npm run validate && astro build",
+    "preview": "astro preview",
+    "validate": "node scripts/validate.mjs",
+    "readme": "node scripts/build-readme.mjs",
+    "check-links": "node scripts/check-links.mjs"
+  },
+  "dependencies": {
+    "@fontsource-variable/archivo": "^5.3.0",
+    "@fontsource/permanent-marker": "^5.3.0",
+    "astro": "7.3.8",
+    "js-yaml": "4.1.0",
+    "lucide-static": "^1.61.0"
+  }
+}

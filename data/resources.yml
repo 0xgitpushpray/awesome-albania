@@ -1,0 +1,740 @@
+# Awesome Albania — the single source of truth.
+# Both the website and README.md are generated from this file.
+#
+# Categories are "destinations". Each one lists its "via" stops (subcategories)
+# in the order they should appear. Every resource names exactly one category
+# and one of that category's stops.
+#
+# Resource fields:
+#   name     required  Display name.
+#   url      required  Canonical https URL.
+#   desc     required  One sentence, no trailing marketing. Max ~140 chars.
+#   cat      required  Category id.
+#   via      required  One of the category's stops.
+#   region   optional  al | xk | mk | me | global   (default: global)
+#   tags     optional  Short lowercase keywords that help search.
+#   license  optional  SPDX id or short text, when known.
+#   archived optional  true when the project is unmaintained but still useful.
+
+categories:
+  - id: datasets
+    name: Datasets
+    sq: Të dhëna
+    blurb: Corpora and labelled data with Albanian in them.
+    via: [Text corpora, Parallel, Labelled, Speech, Indexes]
+
+  - id: nlp
+    name: Language & NLP
+    sq: Gjuha
+    blurb: Models and tools that read, write, speak or translate Albanian.
+    via: [Models, Translation, Speech, Spelling & OCR, Libraries]
+
+  - id: open-data
+    name: Open Data
+    sq: Të dhëna të hapura
+    blurb: Official statistics, registers and public-sector data.
+    via: [Portals, Statistics, Registers, Elections]
+
+  - id: geo
+    name: Maps & Geo
+    sq: Harta
+    blurb: Map data, boundaries and geospatial services.
+    via: [OpenStreetMap, Geoportals, Extracts]
+
+  - id: dev
+    name: Developer Tools
+    sq: Vegla
+    blurb: Locale data, validators and the gotchas of building for the region.
+    via: [Locale, Validation, Scripts & fonts, Gotchas]
+
+  - id: l10n
+    name: Localization
+    sq: Përkthime
+    blurb: Where Albanian translations of open-source software happen.
+    via: [Platforms, Projects]
+
+  - id: community
+    name: Communities
+    sq: Komuniteti
+    blurb: People, hackerspaces, meetups and conferences.
+    via: [Hackerspaces, Conferences, Meetups, Ecosystem]
+
+  - id: learn
+    name: Learning & Reference
+    sq: Mësim
+    blurb: Reading material and references for working in Albanian.
+    via: [Encyclopedias, Dictionaries, Research]
+
+resources:
+  # ── Datasets ────────────────────────────────────────────────────────────
+  - name: CulturaX
+    url: https://huggingface.co/datasets/uonlp/CulturaX
+    desc: Cleaned, deduplicated multilingual web corpus for LLM training with a sizeable Albanian split.
+    cat: datasets
+    via: Text corpora
+    tags: [llm, pretraining, web, huggingface]
+
+  - name: FineWeb-2
+    url: https://huggingface.co/datasets/HuggingFaceFW/fineweb-2
+    desc: Hugging Face's filtered web corpus in 1,000+ languages; Albanian lives under als_Latn.
+    cat: datasets
+    via: Text corpora
+    tags: [llm, pretraining, web, huggingface]
+    license: ODC-By
+
+  - name: HPLT Datasets
+    url: https://hplt-project.org/datasets/v2.0
+    desc: High Performance Language Technologies web-crawl corpora, with cleaned Albanian monolingual text.
+    cat: datasets
+    via: Text corpora
+    tags: [web, pretraining, monolingual]
+
+  - name: OSCAR
+    url: https://oscar-project.org/
+    desc: Open Super-large Crawled Aggregated coRpus, Common Crawl text sorted by language, Albanian included.
+    cat: datasets
+    via: Text corpora
+    tags: [web, common crawl, pretraining]
+
+  - name: CC-100
+    url: https://data.statmt.org/cc-100/
+    desc: Monolingual Common Crawl text used to train XLM-R, downloadable per language (sq).
+    cat: datasets
+    via: Text corpora
+    tags: [common crawl, xlm-r]
+
+  - name: MaCoCu Albanian web corpus
+    url: https://www.clarin.si/repository/xmlui/handle/11356/1804
+    desc: Albanian web corpus crawled from .al and Albanian-language sites by the MaCoCu project.
+    cat: datasets
+    via: Text corpora
+    tags: [web, clarin, macocu]
+    license: CC0
+
+  - name: Leipzig Corpora Collection
+    url: https://wortschatz.uni-leipzig.de/en/download/Albanian
+    desc: Sentence-split Albanian news, web and Wikipedia corpora in sizes from 10K to millions of sentences.
+    cat: datasets
+    via: Text corpora
+    tags: [news, sentences, frequency]
+
+  - name: Albanian Wikipedia dumps
+    url: https://dumps.wikimedia.org/sqwiki/
+    desc: Full XML and SQL dumps of sq.wikipedia.org, refreshed twice a month.
+    cat: datasets
+    via: Text corpora
+    tags: [wikipedia, dump, encyclopedia]
+    license: CC BY-SA
+
+  - name: Bujku newspaper archive
+    url: https://huggingface.co/datasets/Kushtrim/bujku
+    desc: Segmented articles and embeddings from the Kosovo daily Bujku, 1991–1998.
+    cat: datasets
+    via: Text corpora
+    region: xk
+    tags: [news, history, embeddings, gated]
+
+  - name: OPUS
+    url: https://opus.nlpl.eu/
+    desc: The largest open collection of parallel corpora, with dozens of Albanian–X language pairs.
+    cat: datasets
+    via: Parallel
+    tags: [translation, bitext, alignment]
+
+  - name: Tatoeba
+    url: https://tatoeba.org/en/sentences/show_all_in/sqi/none
+    desc: Crowdsourced example sentences in Albanian with translations into many languages.
+    cat: datasets
+    via: Parallel
+    tags: [sentences, translation]
+    license: CC BY 2.0 FR
+
+  - name: Tatoeba Translation Challenge
+    url: https://huggingface.co/datasets/Helsinki-NLP/tatoeba_mt
+    desc: Benchmark test sets for machine translation, Albanian pairs included.
+    cat: datasets
+    via: Parallel
+    tags: [benchmark, translation, evaluation]
+
+  - name: FLORES+
+    url: https://huggingface.co/datasets/openlanguagedata/flores_plus
+    desc: Professionally translated MT evaluation benchmark covering 200+ languages, including Albanian (als_Latn).
+    cat: datasets
+    via: Parallel
+    tags: [benchmark, translation, evaluation]
+
+  - name: Belebele
+    url: https://huggingface.co/datasets/facebook/belebele
+    desc: Multiple-choice reading comprehension benchmark in 122 language variants, Albanian among them.
+    cat: datasets
+    via: Labelled
+    tags: [benchmark, reading comprehension, evaluation]
+
+  - name: SIB-200
+    url: https://huggingface.co/datasets/Davlan/sib200
+    desc: Topic classification benchmark built on FLORES-200 sentences, with an Albanian split.
+    cat: datasets
+    via: Labelled
+    tags: [classification, benchmark]
+
+  - name: WikiANN
+    url: https://huggingface.co/datasets/unimelb-nlp/wikiann
+    desc: Silver-standard named entity recognition (PER, LOC, ORG) data, with an Albanian (sq) configuration.
+    cat: datasets
+    via: Labelled
+    tags: [ner, entities]
+
+  - name: Shaj
+    url: https://huggingface.co/datasets/strombergnlp/shaj
+    desc: Albanian social media posts annotated for offensive language and hate speech, OffensEval style.
+    cat: datasets
+    via: Labelled
+    tags: [hate speech, offensive, classification, social media]
+    license: CC BY 4.0
+
+  - name: AlbNews
+    url: https://lindat.mff.cuni.cz/repository/xmlui/handle/11234/1-5411
+    desc: Albanian news headlines labelled by topic (politics, culture, economy, sport) for topic modelling.
+    cat: datasets
+    via: Labelled
+    tags: [news, topic modelling, classification]
+    license: CC BY 4.0
+
+  - name: EduSenti
+    url: https://github.com/plandes/edusenti
+    desc: Sentiment-annotated Albanian education reviews with baseline models.
+    cat: datasets
+    via: Labelled
+    tags: [sentiment, reviews]
+
+  - name: UD Albanian TSA
+    url: https://universaldependencies.org/treebanks/sq_tsa/index.html
+    desc: Universal Dependencies treebank of Albanian Wikipedia sentences with POS, morphology and syntax.
+    cat: datasets
+    via: Labelled
+    tags: [treebank, syntax, pos, morphology]
+
+  - name: UD Albanian STAF
+    url: https://universaldependencies.org/treebanks/sq_staf/index.html
+    desc: Hand-corrected Universal Dependencies treebank of sentences from Albanian fiction, 1963–2004.
+    cat: datasets
+    via: Labelled
+    tags: [treebank, syntax, fiction]
+    license: CC BY-SA 4.0
+
+  - name: Common Voice Albanian
+    url: https://commonvoice.mozilla.org/sq
+    desc: Mozilla's crowdsourced voice dataset. Record or validate Albanian clips, then download the corpus.
+    cat: datasets
+    via: Speech
+    tags: [asr, voice, crowdsourced]
+    license: CC0
+
+  - name: Hugging Face · Albanian datasets
+    url: https://huggingface.co/datasets?language=language:sq
+    desc: Every Hugging Face dataset tagged Albanian. Also try the als (Tosk) and aln (Gheg) tags.
+    cat: datasets
+    via: Indexes
+    tags: [huggingface, browse, search]
+
+  - name: Hugging Face · Albanian models
+    url: https://huggingface.co/models?language=sq
+    desc: Every model on the Hugging Face Hub tagged as supporting Albanian.
+    cat: datasets
+    via: Indexes
+    tags: [huggingface, models, browse]
+
+  # ── Language & NLP ──────────────────────────────────────────────────────
+  - name: HPLT BERT for Albanian
+    url: https://huggingface.co/HPLT/hplt_bert_base_2_0_als-Latn
+    desc: Monolingual Albanian encoder model trained on HPLT 2.0 data, ready for fine-tuning.
+    cat: nlp
+    via: Models
+    tags: [bert, encoder, transformer, huggingface]
+
+  - name: XLM-RoBERTa
+    url: https://huggingface.co/FacebookAI/xlm-roberta-base
+    desc: Multilingual encoder pretrained on 100 languages including Albanian; a strong default baseline.
+    cat: nlp
+    via: Models
+    tags: [encoder, transformer, multilingual]
+
+  - name: fastText word vectors
+    url: https://fasttext.cc/docs/en/crawl-vectors.html
+    desc: Pretrained 300-dimension word vectors for Albanian (cc.sq.300) trained on Common Crawl and Wikipedia.
+    cat: nlp
+    via: Models
+    tags: [embeddings, word vectors]
+
+  - name: OPUS-MT English→Albanian
+    url: https://huggingface.co/Helsinki-NLP/opus-mt-en-sq
+    desc: Small, fast open translation model from English to Albanian, trained on OPUS.
+    cat: nlp
+    via: Translation
+    tags: [mt, marian, translation]
+
+  - name: OPUS-MT Albanian→English
+    url: https://huggingface.co/Helsinki-NLP/opus-mt-sq-en
+    desc: The reverse direction, a compact Marian model that translates Albanian into English.
+    cat: nlp
+    via: Translation
+    tags: [mt, marian, translation]
+
+  - name: NLLB-200
+    url: https://huggingface.co/facebook/nllb-200-distilled-600M
+    desc: Meta's No Language Left Behind translation model; translates to and from Albanian (als_Latn).
+    cat: nlp
+    via: Translation
+    tags: [mt, multilingual, translation]
+
+  - name: Whisper
+    url: https://github.com/openai/whisper
+    desc: OpenAI's open speech recognition model, which transcribes and translates Albanian audio.
+    cat: nlp
+    via: Speech
+    tags: [asr, transcription, speech-to-text]
+    license: MIT
+
+  - name: MMS TTS Albanian
+    url: https://huggingface.co/facebook/mms-tts-sqi
+    desc: Meta's Massively Multilingual Speech text-to-speech model for Albanian.
+    cat: nlp
+    via: Speech
+    tags: [tts, text-to-speech, vits]
+
+  - name: eSpeak NG
+    url: https://github.com/espeak-ng/espeak-ng
+    desc: Compact open-source speech synthesizer with an Albanian voice and phonemizer.
+    cat: nlp
+    via: Speech
+    tags: [tts, phonemizer, text-to-speech]
+    license: GPL-3.0
+
+  - name: Tesseract Albanian model
+    url: https://github.com/tesseract-ocr/tessdata_best
+    desc: Trained LSTM models for Tesseract OCR; sqi.traineddata reads Albanian text, diacritics included.
+    cat: nlp
+    via: Spelling & OCR
+    tags: [ocr, tesseract, scanning]
+    license: Apache-2.0
+
+  - name: Hunspell Albanian dictionary
+    url: https://packages.fedoraproject.org/pkgs/hunspell-sq/hunspell-sq/
+    desc: The sq_AL Hunspell spelling dictionary used by LibreOffice, Firefox and Linux distributions.
+    cat: nlp
+    via: Spelling & OCR
+    tags: [spellcheck, hunspell, myspell]
+    license: GPL-2.0
+
+  - name: spaCy
+    url: https://spacy.io/usage/models#languages
+    desc: Industrial NLP library with Albanian language data (tokenizer, stop words) but no trained pipeline yet. Bring your own.
+    cat: nlp
+    via: Libraries
+    tags: [python, tokenizer, pipeline]
+    license: MIT
+
+  - name: albanianlanguage
+    url: https://pypi.org/project/albanianlanguage/
+    desc: Python package giving access to Albanian words and their linguistic details.
+    cat: nlp
+    via: Libraries
+    tags: [python, lexicon, words]
+
+  - name: Vithkuqi transliteration
+    url: https://github.com/willborici/veqilharxhi-transliteration
+    desc: Transliterates between the Latin Albanian alphabet and the historical Vithkuqi (Veqilharxhi) script.
+    cat: nlp
+    via: Libraries
+    tags: [script, transliteration, vithkuqi]
+
+  # ── Open Data ───────────────────────────────────────────────────────────
+  - name: Albania Open Data Portal
+    url: https://opendata.gov.al/
+    desc: The national open data portal, with CSV/XML downloads, DCAT-AP metadata and a SPARQL endpoint.
+    cat: open-data
+    via: Portals
+    region: al
+    tags: [government, sparql, csv]
+
+  - name: Kosovo Customs open data
+    url: https://dogana.rks-gov.net/OpenData
+    desc: Import, export and revenue data published by Kosovo Customs. The national portal is offline while it's rebuilt.
+    cat: open-data
+    via: Portals
+    region: xk
+    tags: [trade, customs, government]
+
+  - name: Humanitarian Data Exchange · Albania
+    url: https://data.humdata.org/group/alb
+    desc: OCHA's catalogue of Albania datasets, covering population, boundaries, health and infrastructure.
+    cat: open-data
+    via: Portals
+    region: al
+    tags: [humanitarian, population, ocha]
+
+  - name: INSTAT
+    url: https://www.instat.gov.al/
+    desc: Albania's Institute of Statistics, publisher of census, labour, prices and trade statistics.
+    cat: open-data
+    via: Statistics
+    region: al
+    tags: [census, statistics, government]
+
+  - name: Kosovo Agency of Statistics
+    url: https://ask.rks-gov.net/
+    desc: Official statistics for Kosovo, covering population, economy, agriculture and social indicators.
+    cat: open-data
+    via: Statistics
+    region: xk
+    tags: [census, statistics, government]
+
+  - name: ASK Data
+    url: https://askdata.rks-gov.net/
+    desc: The Kosovo Agency of Statistics' PxWeb database, with queryable tables and an API.
+    cat: open-data
+    via: Statistics
+    region: xk
+    tags: [pxweb, api, statistics]
+
+  - name: Bank of Albania statistics
+    url: https://www.bankofalbania.org/Statistics/
+    desc: Exchange rates, monetary, banking and balance-of-payments series from Albania's central bank.
+    cat: open-data
+    via: Statistics
+    region: al
+    tags: [exchange rates, finance, lek]
+
+  - name: World Bank · Albania
+    url: https://data.worldbank.org/country/albania
+    desc: Long-run development indicators for Albania, available via the World Bank API.
+    cat: open-data
+    via: Statistics
+    region: al
+    tags: [indicators, api, economy]
+
+  - name: World Bank · Kosovo
+    url: https://data.worldbank.org/country/kosovo
+    desc: Development indicators for Kosovo (country code XKX in the World Bank API).
+    cat: open-data
+    via: Statistics
+    region: xk
+    tags: [indicators, api, economy]
+
+  - name: National Business Center (QKB)
+    url: https://qkb.gov.al/
+    desc: Albania's business register, used to search companies and NIPT tax numbers.
+    cat: open-data
+    via: Registers
+    region: al
+    tags: [companies, business register, nipt]
+
+  - name: Kosovo Business Registration Agency
+    url: https://arbk.rks-gov.net/
+    desc: Kosovo's official business register (ARBK), used to search registered companies.
+    cat: open-data
+    via: Registers
+    region: xk
+    tags: [companies, business register]
+
+  - name: Open Procurement Albania
+    url: https://openprocurement.al/
+    desc: Searchable public procurement data for Albania, by the Albanian Institute of Science.
+    cat: open-data
+    via: Registers
+    region: al
+    tags: [procurement, tenders, transparency]
+
+  - name: Central Election Commission (Albania)
+    url: https://kqz.gov.al/
+    desc: Official results and voter data for Albanian elections (KQZ).
+    cat: open-data
+    via: Elections
+    region: al
+    tags: [elections, results]
+
+  - name: Central Election Commission (Kosovo)
+    url: https://kqz-ks.org/
+    desc: Official results and statistics for Kosovo elections (KQZ).
+    cat: open-data
+    via: Elections
+    region: xk
+    tags: [elections, results]
+
+  # ── Maps & Geo ──────────────────────────────────────────────────────────
+  - name: OpenStreetMap · Albania
+    url: https://wiki.openstreetmap.org/wiki/Albania
+    desc: The OSM wiki hub for Albania, covering tagging conventions, imports, ongoing projects and contacts.
+    cat: geo
+    via: OpenStreetMap
+    region: al
+    tags: [osm, mapping, community]
+
+  - name: OpenStreetMap · Kosovo
+    url: https://wiki.openstreetmap.org/wiki/Kosovo
+    desc: The OSM wiki hub for Kosovo mappers, with conventions, projects and the local community.
+    cat: geo
+    via: OpenStreetMap
+    region: xk
+    tags: [osm, mapping, community]
+
+  - name: ASIG Geoportal
+    url: https://geoportal.asig.gov.al/
+    desc: Albania's national spatial data infrastructure, offering orthophotos, cadastre and WMS/WFS services.
+    cat: geo
+    via: Geoportals
+    region: al
+    tags: [wms, orthophoto, cadastre, inspire]
+
+  - name: Kosovo Geoportal
+    url: https://geoportal.rks-gov.net/
+    desc: Kosovo Cadastral Agency's geoportal, with base maps, cadastre and spatial services.
+    cat: geo
+    via: Geoportals
+    region: xk
+    tags: [wms, cadastre, inspire]
+
+  - name: Geofabrik · Albania extract
+    url: https://download.geofabrik.de/europe/albania.html
+    desc: Daily OpenStreetMap extracts of Albania in .osm.pbf and shapefile formats.
+    cat: geo
+    via: Extracts
+    region: al
+    tags: [osm, pbf, shapefile, download]
+    license: ODbL
+
+  - name: Geofabrik · Kosovo extract
+    url: https://download.geofabrik.de/europe/kosovo.html
+    desc: Daily OpenStreetMap extracts of Kosovo in .osm.pbf and shapefile formats.
+    cat: geo
+    via: Extracts
+    region: xk
+    tags: [osm, pbf, shapefile, download]
+    license: ODbL
+
+  # ── Developer Tools ─────────────────────────────────────────────────────
+  - name: holidays (Python)
+    url: https://github.com/vacanza/holidays
+    desc: Public holiday calendars for Python with Albania (AL) and Kosovo (XK) built in.
+    cat: dev
+    via: Locale
+    tags: [python, holidays, calendar]
+    license: MIT
+
+  - name: Day.js Albanian locale
+    url: https://github.com/iamkun/dayjs/blob/dev/src/locale/sq.js
+    desc: Albanian (sq) month names, weekdays and relative time strings for Day.js.
+    cat: dev
+    via: Locale
+    tags: [javascript, dates, i18n]
+    license: MIT
+
+  - name: Laravel Lang · Albanian
+    url: https://github.com/Laravel-Lang/lang/tree/main/locales/sq
+    desc: Community Albanian translations of Laravel's validation, auth and pagination messages.
+    cat: dev
+    via: Locale
+    tags: [php, laravel, i18n]
+    license: MIT
+
+  - name: Unicode CLDR · Albanian
+    url: https://github.com/unicode-org/cldr/blob/main/common/main/sq.xml
+    desc: The locale data behind Intl and ICU, giving sq, sq-AL, sq-XK and sq-MK number, date and plural rules.
+    cat: dev
+    via: Locale
+    tags: [i18n, icu, intl, plurals]
+
+  - name: python-stdnum NIPT
+    url: https://github.com/arthurdejong/python-stdnum/blob/master/stdnum/al/nipt.py
+    desc: Validates and formats Albanian NIPT (VAT and tax identification) numbers in Python.
+    cat: dev
+    via: Validation
+    region: al
+    tags: [python, tax id, vat, nipt]
+    license: LGPL-2.1
+
+  - name: Noto Sans Vithkuqi
+    url: https://fonts.google.com/noto/specimen/Noto+Sans+Vithkuqi
+    desc: Open font for the Vithkuqi script, the 19th-century Albanian alphabet encoded in Unicode 14.
+    cat: dev
+    via: Scripts & fonts
+    tags: [font, unicode, vithkuqi]
+    license: OFL-1.1
+
+  - name: Unicode Vithkuqi block
+    url: https://www.unicode.org/charts/PDF/U10570.pdf
+    desc: The official Unicode code chart for Vithkuqi (U+10570–U+105BF).
+    cat: dev
+    via: Scripts & fonts
+    tags: [unicode, script, vithkuqi]
+
+  - name: XK, Kosovo's country code
+    url: https://en.wikipedia.org/wiki/XK_(user_assigned_code)
+    desc: Kosovo has no ISO 3166 code; most systems use the user-assigned XK/XKX. Read this before building country pickers.
+    cat: dev
+    via: Gotchas
+    region: xk
+    tags: [iso 3166, country code, i18n]
+
+  - name: Albanian language codes
+    url: https://iso639-3.sil.org/code/sqi
+    desc: sq/sqi is the macrolanguage; Tosk is als and Gheg is aln. Datasets use all of them, so search for every code.
+    cat: dev
+    via: Gotchas
+    tags: [iso 639, language code, tosk, gheg]
+
+  - name: AKEP · .al domains
+    url: https://akep.al/
+    desc: Albania's electronic communications regulator, which administers the .al country-code top-level domain.
+    cat: dev
+    via: Gotchas
+    region: al
+    tags: [domains, cctld, registry]
+
+  # ── Localization ────────────────────────────────────────────────────────
+  - name: Mozilla Pontoon · Albanian
+    url: https://pontoon.mozilla.org/sq/
+    desc: Translate Firefox, Thunderbird and other Mozilla products into Albanian.
+    cat: l10n
+    via: Platforms
+    tags: [firefox, translation, mozilla]
+
+  - name: Hosted Weblate · Albanian
+    url: https://hosted.weblate.org/languages/sq/
+    desc: Hundreds of libre software projects that accept Albanian translations on Weblate.
+    cat: l10n
+    via: Platforms
+    tags: [translation, weblate, open source]
+
+  - name: translatewiki.net · Albanian
+    url: https://translatewiki.net/wiki/Portal:Sq
+    desc: Localizes MediaWiki, OpenStreetMap and other projects into Albanian.
+    cat: l10n
+    via: Platforms
+    tags: [mediawiki, translation, osm]
+
+  - name: GNOME Albanian team
+    url: https://l10n.gnome.org/languages/sq/
+    desc: Translation status and team page for the GNOME desktop in Albanian.
+    cat: l10n
+    via: Projects
+    tags: [gnome, linux, desktop]
+
+  - name: LibreOffice · Albanian
+    url: https://translations.documentfoundation.org/languages/sq/
+    desc: Help translate the LibreOffice suite and its help pages into Albanian.
+    cat: l10n
+    via: Projects
+    tags: [libreoffice, office, translation]
+
+  # ── Communities ─────────────────────────────────────────────────────────
+  - name: Open Labs Hackerspace
+    url: https://opencollective.com/openlabs
+    desc: Tirana hackerspace that ran OSCAL, Wiki Weekend and FOSS Camp from 2012. Now archived, but its people are still around.
+    cat: community
+    via: Hackerspaces
+    region: al
+    tags: [tirana, foss, hackerspace, oscal]
+    archived: true
+
+  - name: BONEVET
+    url: https://bonevet.org/
+    desc: Makerspaces and coding classes for kids and adults in Gjakova, Prishtina, Kaçanik, Kamenica and Mitrovica.
+    cat: community
+    via: Hackerspaces
+    region: xk
+    tags: [makerspace, education, kids]
+
+  - name: FLOSSK
+    url: https://flossk.org/
+    desc: Free Libre Open Source Software Kosova, a Prishtina NGO running a hackerspace, workshops and events since 2009.
+    cat: community
+    via: Hackerspaces
+    region: xk
+    tags: [prishtina, foss, hackerspace]
+
+  - name: Software Freedom Kosova
+    url: https://sfk.flossk.org/
+    desc: FLOSSK's annual international conference on free software and open knowledge in Prishtina.
+    cat: community
+    via: Conferences
+    region: xk
+    tags: [prishtina, conference, foss]
+
+  - name: GDG Tirana
+    url: https://gdg.community.dev/gdg-tirana/
+    desc: Google Developer Group in Tirana, running meetups, study jams and DevFest.
+    cat: community
+    via: Meetups
+    region: al
+    tags: [google, meetup, devfest]
+
+  - name: GDG Prishtina
+    url: https://gdg.community.dev/gdg-prishtina/
+    desc: Google Developer Group in Prishtina, running meetups and DevFest Kosovo.
+    cat: community
+    via: Meetups
+    region: xk
+    tags: [google, meetup, devfest]
+
+  - name: Wikimedians of Albanian Language
+    url: https://meta.wikimedia.org/wiki/Wikimedians_of_Albanian_Language_User_Group
+    desc: The user group behind Albanian Wikipedia editathons, Wiki Loves Monuments and open-knowledge projects.
+    cat: community
+    via: Meetups
+    tags: [wikipedia, open knowledge, editathon]
+
+  - name: Innovation Centre Kosovo
+    url: https://ickosovo.com/
+    desc: Prishtina incubator and coworking hub for startups, tech training and the local ecosystem.
+    cat: community
+    via: Ecosystem
+    region: xk
+    tags: [startups, incubator, coworking]
+
+  - name: STIKK
+    url: https://stikk.org/
+    desc: Kosovo ICT Association, which publishes industry research and connects local tech companies.
+    cat: community
+    via: Ecosystem
+    region: xk
+    tags: [industry, association, ict]
+
+
+  # ── Learning & Reference ────────────────────────────────────────────────
+  - name: Albanian Wikipedia
+    url: https://sq.wikipedia.org/
+    desc: Wikipedia in Albanian, with 100,000+ articles and a corpus and knowledge source anyone can edit.
+    cat: learn
+    via: Encyclopedias
+    tags: [wikipedia, encyclopedia]
+    license: CC BY-SA
+
+  - name: Albanian Wiktionary
+    url: https://sq.wiktionary.org/
+    desc: Free multilingual dictionary in Albanian, with definitions, inflections and etymologies.
+    cat: learn
+    via: Dictionaries
+    tags: [dictionary, lexicon, wiktionary]
+    license: CC BY-SA
+
+  - name: Glottolog · Albanian
+    url: https://glottolog.org/resource/languoid/id/alba1267
+    desc: The Albanian language family in Glottolog, with its varieties, codes and an extensive bibliography.
+    cat: learn
+    via: Research
+    tags: [linguistics, bibliography, dialects]
+
+  - name: NLP for Albanian, a survey
+    url: https://ijece.iaescore.com/index.php/IJECE/article/view/28729
+    desc: A state-of-the-art survey of Albanian NLP research (2022) and a good map of what exists and what's missing.
+    cat: learn
+    via: Research
+    tags: [survey, paper, nlp]
+
+  - name: Detecting Abusive Albanian
+    url: https://arxiv.org/abs/2107.13592
+    desc: The paper behind the Shaj dataset, on offensive language detection in Albanian social media.
+    cat: learn
+    via: Research
+    tags: [paper, hate speech, arxiv]

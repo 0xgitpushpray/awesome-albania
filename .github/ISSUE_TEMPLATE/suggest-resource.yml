@@ -1,0 +1,71 @@
+name: Suggest a resource
+description: Add a dataset, tool, community or other resource to Awesome Albania.
+title: 'Suggest: '
+labels: [suggestion]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for adding a stop to the route. A maintainer will check the link and add it to `data/resources.yml`.
+  - type: input
+    id: name
+    attributes:
+      label: Name
+      placeholder: e.g. UD Albanian STAF
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Link
+      description: The canonical https URL (project page, repo or dataset card).
+      placeholder: https://
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - Datasets
+        - Language & NLP
+        - Open Data
+        - Maps & Geo
+        - Developer Tools
+        - Localization
+        - Communities
+        - Learning & Reference
+        - Not sure
+    validations:
+      required: true
+  - type: textarea
+    id: desc
+    attributes:
+      label: What is it?
+      description: One sentence, around 140 characters. Say what it is and what makes it useful for Albanian.
+    validations:
+      required: true
+  - type: dropdown
+    id: region
+    attributes:
+      label: Region
+      options:
+        - Global / multilingual
+        - Albania
+        - Kosovo
+        - North Macedonia
+        - Montenegro
+  - type: input
+    id: license
+    attributes:
+      label: License (if known)
+      placeholder: e.g. CC BY 4.0, MIT
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: The link works and is not paywalled or behind a login (gated datasets are fine).
+          required: true
+        - label: It is genuinely useful for working with Albanian data, language or the local tech scene.
+          required: true

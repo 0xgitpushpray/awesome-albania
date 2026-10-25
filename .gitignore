@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.astro/
+.DS_Store
+*.log
+link-report.txt
+body.md
+.impeccable/review/
+.impeccable/config.local.json
