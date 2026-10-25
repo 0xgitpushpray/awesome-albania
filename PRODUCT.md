@@ -8,7 +8,7 @@ web
 
 ## Stack
 
-Astro (static output), deployed to GitHub Pages via GitHub Actions at `0xgitpushpray.github.io/awesome-albania` (base path `/awesome-albania`). Repo: `0xgitpushpray/awesome-albania`, currently private — Pages on a private repo needs a paid GitHub plan, so it likely goes public at launch.
+Astro (static output), deployed to GitHub Pages via GitHub Actions at `0xgitpushpray.github.io/awesome-albania` (base path `/awesome-albania`). Repo: `0xgitpushpray/awesome-albania`.
 
 ## Users
 
